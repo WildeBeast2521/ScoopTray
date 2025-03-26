@@ -256,7 +256,7 @@
   The default check interval is set to <b>2 hours</b>. To customize it, modify the <code>$timerInterval</code> value in the script.
 
   <h3>Backdrops</h3>
-  The default backdrop is set to <b>Mica</b>. To customize it, replace <code>$DWMSBT_MAINWINDOW</code> with <code>$DWMSBT_TABBEDWINDOW</code> at the appropriate line in the script.
+  The default backdrop is set to <b>Mica</b>. To customize it, replace <code>$DWMSBT_MAINWINDOW</code> with a defined variable (<code>$DWMSBT_MAINWINDOW</code>, <code>$DWMSBT_TRANSIENTWINDOW</code> or <code>$DWMSBT_TABBEDWINDOW</code>) at the appropriate line in the script.
 </p>
 
 <h2>🙌 Acknowledgements</h2>
