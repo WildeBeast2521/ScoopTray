@@ -277,7 +277,7 @@
 
 <h2>🔧 Contributing</h2>
 <p>
-  Pull requests are welcome - check out <a href="https://github.com/WildeBeast2521/ScoopTray/CONTRIBUTING.md">CONTRIBUTING</a> for more information
+  Pull requests are welcome - check out <a href="https://github.com/WildeBeast2521/ScoopTray/blob/main/CONTRIBUTING.md">CONTRIBUTING</a> for more information
 </p>
 
 <h2>📄 License</h2>
