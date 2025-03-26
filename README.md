@@ -135,12 +135,12 @@
           </a>
         </td>
         <td align="center">
-          <a href="#" title="Acrylic Light">
+          <a title="Acrylic Light">
             <img src="./images/acrylic-light.png" alt="Acrylic Light"/><br>
           </a>
         </td>
         <td align="center">
-          <a href="#" title="Acrylic Dark">
+          <a title="Acrylic Dark">
             <img src="./images/acrylic-dark.png" alt="Acrylic Dark"/><br>
           </a>
         </td>
@@ -153,12 +153,12 @@
           </a>
         </td>
         <td align="center">
-          <a href="#" title="Mica Light">
+          <a title="Mica Light">
             <img src="./images/mica-light.png" alt="Mica Light"/><br>
           </a>
         </td>
         <td align="center">
-          <a href="#" title="Mica Dark">
+          <a title="Mica Dark">
             <img src="./images/mica-dark.png" alt="Mica Dark"/><br>
           </a>
         </td>
@@ -170,12 +170,12 @@
           </a>
         </td>
         <td align="center">
-          <a href="#" title="Mica Alt Light">
+          <a title="Mica Alt Light">
             <img src="./images/mica-alt-light.png" alt="Mica Alt Light"/><br>
           </a>
         </td>
         <td align="center">
-          <a href="#" title="Mica Alt Dark">
+          <a title="Mica Alt Dark">
             <img src="./images/mica-alt-dark.png" alt="Mica Alt Dark"/><br>
           </a>
         </td>
@@ -198,12 +198,12 @@
       </tr>
       <tr>
         <td align="center">
-          <a href="#" title="Light">
+          <a title="Light">
             <img src="./images/light.png" alt="Light"/><br>
           </a>
         </td>
         <td align="center">
-          <a href="#" title="Dark">
+          <a title="Dark">
             <img src="./images/dark.png" alt="Dark"/><br>
           </a>
         </td>
