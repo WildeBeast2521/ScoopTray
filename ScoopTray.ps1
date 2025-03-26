@@ -222,6 +222,10 @@ function Show-Form {
 		$DWMSBT_TRANSIENTWINDOW = 3;  # Acrylic
 		$DWMSBT_TABBEDWINDOW = 4;     # Mica Alt (Tabbed)
 
+		$windowsBuild = [System.Environment]::OSVersion.Version
+
+		$theme = Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "AppsUseLightTheme"
+
 		# Handle newlines in text
 		$textBlock = $window.FindName("LabelText")
 		$textBlock.Inlines.Clear()
@@ -234,28 +238,36 @@ function Show-Form {
 			}
 		}
 
-		# Get handles
-		$helper = New-Object System.Windows.Interop.WindowInteropHelper($window)
-		$hwnd = $helper.Handle
-		$src = [System.Windows.Interop.HwndSource]::FromHwnd($hwnd)
+		# Check compatibility
+		if ($windowsBuild.Build -ge 22000) {
+			# Get handles
+			$helper = New-Object System.Windows.Interop.WindowInteropHelper($window)
+			$hwnd = $helper.Handle
+			$src = [System.Windows.Interop.HwndSource]::FromHwnd($hwnd)
 
-		# Set transparent backgrond color
-		# and extend frame across entire window
-		$src.CompositionTarget.BackgroundColor = [System.Windows.Media.Colors]::Transparent
-		[DwmApi]::ExtendFrame($hwnd)
+			# Set transparent backgrond color
+			# and extend frame across entire window
+			$src.CompositionTarget.BackgroundColor = [System.Windows.Media.Colors]::Transparent
+			[DwmApi]::ExtendFrame($hwnd)
 
-		# Set title bar and text color
-		$theme = Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "AppsUseLightTheme"
-		If ($theme.AppsUseLightTheme -eq 0) {
-			$window.Resources["TextForegroundBrush"] = [System.Windows.Media.Brushes]::White
-			[DwmApi]::SetDwmAttrib($hwnd, $DWMWA_USE_IMMERSIVE_DARK_MODE, $true)
+			# Set title bar and text color
+			If ($theme.AppsUseLightTheme -eq 0) {
+				$window.Resources["TextForegroundBrush"] = [System.Windows.Media.Brushes]::White
+				[DwmApi]::SetDwmAttrib($hwnd, $DWMWA_USE_IMMERSIVE_DARK_MODE, $true)
+			} else {
+				$window.Resources["TextForegroundBrush"] = [System.Windows.Media.Brushes]::Black
+			}
+
+			# Set backdrop
+			# Check compatibility
+			if ($windowsBuild.Build -ge 22621) {
+				[DwmApi]::SetDwmAttrib($hwnd, $DWMWA_SYSTEMBACKDROP_TYPE, $DWMSBT_MAINWINDOW)
+			}
 		} else {
+			$window.Background = [System.Windows.Media.Brushes]::White
 			$window.Resources["TextForegroundBrush"] = [System.Windows.Media.Brushes]::Black
 		}
-
-		# Set backdrop
-		[DwmApi]::SetDwmAttrib($hwnd, $DWMWA_SYSTEMBACKDROP_TYPE, $DWMSBT_MAINWINDOW)
-	})
+  	})
 
 	$listBox = $window.FindName("ListBoxItems")
 	$yesButton = $window.FindName("YesButton")
