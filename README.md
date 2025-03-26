@@ -11,14 +11,14 @@
 
 <h2>Table of Contents</h2>
 <ul>
-  <li><a href="https://github.com/WildeBeast2521/ScoopTray#-about">About</a></li>
-  <li><a href="https://github.com/WildeBeast2521/ScoopTray#-features">Features</a></li>
-  <li><a href="https://github.com/WildeBeast2521/ScoopTray#-prerequisites">Prerequisites</a></li>
-  <li><a href="https://github.com/WildeBeast2521/ScoopTray#-installation">Installation</a></li>
-  <li><a href="https://github.com/WildeBeast2521/ScoopTray#%EF%B8%8F-usage">Usage</a></li>
-  <li><a href="https://github.com/WildeBeast2521/ScoopTray#-acknowledgements">Acknowledgements</a></li>
-  <li><a href="https://github.com/WildeBeast2521/ScoopTray#-contributing">Contributing</a></li>
-  <li><a href="https://github.com/WildeBeast2521/ScoopTray#-license">License</a></li>
+  <li><a href="https://github.com/WildeBeast2521/ScoopTray?tab=readme-ov-file#-about">About</a></li>
+  <li><a href="https://github.com/WildeBeast2521/ScoopTray?tab=readme-ov-file#-features">Features</a></li>
+  <li><a href="https://github.com/WildeBeast2521/ScoopTray?tab=readme-ov-file#-prerequisites">Prerequisites</a></li>
+  <li><a href="https://github.com/WildeBeast2521/ScoopTray?tab=readme-ov-file#-installation">Installation</a></li>
+  <li><a href="https://github.com/WildeBeast2521/ScoopTray?tab=readme-ov-file#%EF%B8%8F-usage">Usage</a></li>
+  <li><a href="https://github.com/WildeBeast2521/ScoopTray?tab=readme-ov-file#-acknowledgements">Acknowledgements</a></li>
+  <li><a href="https://github.com/WildeBeast2521/ScoopTray?tab=readme-ov-file#-contributing">Contributing</a></li>
+  <li><a href="https://github.com/WildeBeast2521/ScoopTray?tab=readme-ov-file#-license">License</a></li>
 </ul>
 
 <h2>❔ About</h2>
