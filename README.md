@@ -263,10 +263,10 @@
   ScoopTray has evolved through a lot of edits, from a simple tray application into a customizable update manager, with help from various sources:
   <ol>
     <li>
-      <a href="https://github.com/dongle-the-gadget/SystemBackdropTypes">SystemBackdropTypes</a> / <a href="https://tvc-16.science/mica-wpf.html">Apply Mica to a WPF app on Windows 11</a> for backdrop integration
+      <a href="https://github.com/dongle-the-gadget/SystemBackdropTypes">dongle-the-gadget/SystemBackdropTypes</a> / <a href="https://tvc-16.science/mica-wpf.html">Apply Mica to a WPF app on Windows 11</a> for backdrop integration
     </li>
     <li>
-      <a href="https://gist.github.com/rounk-ctrl/b04e5622e30e0d62956870d5c22b7017">Dark Mode APIs</a> / <a href="https://www.wxwidgets.org/wxWidgets/src/msw/darkmode.cpp">Support for dark mode in wxMSW</a> for Dark mode support
+      <a href="https://gist.github.com/rounk-ctrl/b04e5622e30e0d62956870d5c22b7017">Win32 Dark Mode</a> / <a href="https://www.wxwidgets.org/wxWidgets/src/msw/darkmode.cpp">Support for dark mode in wxMSW</a> for Dark mode support
     </li>
     <li>
       <a href="https://github.com/foosel/scoop-tray">scoop-tray</a> for the icons
