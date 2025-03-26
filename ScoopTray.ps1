@@ -220,7 +220,7 @@ function Show-Form {
 
 		$DWMSBT_MAINWINDOW = 2;       # Mica
 		$DWMSBT_TRANSIENTWINDOW = 3;  # Acrylic
-		$DWMSBT_TABBEDWINDOW = 4;     # Mica Alt (Tabbed)
+		$DWMSBT_TABBEDWINDOW = 4;     # Mica Alt
 
 		$windowsBuild = [System.Environment]::OSVersion.Version
 
