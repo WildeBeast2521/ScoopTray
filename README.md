@@ -73,7 +73,7 @@
   </details>
   <details>
     <summary>
-      Terminates<sup><a href="#kills">1</a></sup> package applications to allow updates
+      Terminates<sup><a href="#terminates">[1]</a></sup> package applications to allow updates
     </summary>
     <table>
       <tr>
@@ -85,11 +85,6 @@
         </td>
       </tr>
     </table>
-    <p id="kills">
-      <strong>1</strong>
-      To allow package updates, applications currently in use must be closed. It is highly recommended to ensure programs are idle and that no unsaved progress exists before termination.<br>
-      If you prefer to close applications manually, do so before running updates.
-    </p>
   </details>
   <details>
     <summary>
@@ -203,13 +198,13 @@
       </tr>
       <tr>
         <td align="center">
-          <a href="#" title="Context Menu Light">
-            <img src="./images/contextmenu-light.png" alt="Context Menu Light"/><br>
+          <a href="#" title="Light">
+            <img src="./images/light.png" alt="Light"/><br>
           </a>
         </td>
         <td align="center">
-          <a href="#" title="Context Menu Dark">
-            <img src="./images/contextmenu-dark.png" alt="Context Menu Dark"/><br>
+          <a href="#" title="Dark">
+            <img src="./images/dark.png" alt="Dark"/><br>
           </a>
         </td>
       </tr>
@@ -219,6 +214,12 @@
 
 > [!NOTE]  
 > Backdrop and dark mode integrations are only supported on Windows builds 22000+
+
+<p id="terminates">
+  <strong>[1]</strong>
+  To allow package updates, applications currently in use must be closed. It is highly recommended to ensure programs are idle and that no unsaved progress exists before termination.<br>
+  If you prefer to close applications manually, do so before running updates.
+</p>
 
 <h2>📚 Prerequisites</h2>
 <p>
