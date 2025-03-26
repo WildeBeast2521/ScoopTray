@@ -11,14 +11,14 @@
 
 <h2>Table of Contents</h2>
 <ul>
-  <li><a href="❔ About">About</a></li>
-  <li><a href="🚀 Features">Features</a></li>
-  <li><a href="📚 Prerequisites">Prerequisites</a></li>
-  <li><a href="📥 Installation">Installation</a></li>
-  <li><a href="🛠️ Usage">Usage</a></li>
-  <li><a href="🙌 Acknowledgements">Acknowledgements</a></li>
-  <li><a href="🔧 Contributing">Contributing</a></li>
-  <li><a href="📄 License">License</a></li>
+  <li><a href="https://github.com/WildeBeast2521/ScoopTray/blob/main/README.md#about">About</a></li>
+  <li><a href="https://github.com/WildeBeast2521/ScoopTray/blob/main/README.md#features">Features</a></li>
+  <li><a href="https://github.com/WildeBeast2521/ScoopTray/blob/main/README.md#prerequisites">Prerequisites</a></li>
+  <li><a href="https://github.com/WildeBeast2521/ScoopTray/blob/main/README.md#installation">Installation</a></li>
+  <li><a href="https://github.com/WildeBeast2521/ScoopTray/blob/main/README.md#usage">Usage</a></li>
+  <li><a href="https://github.com/WildeBeast2521/ScoopTray/blob/main/README.md#acknowledgements">Acknowledgements</a></li>
+  <li><a href="https://github.com/WildeBeast2521/ScoopTray/blob/main/README.md#contributing">Contributing</a></li>
+  <li><a href="https://github.com/WildeBeast2521/ScoopTray/blob/main/README.md#license">License</a></li>
 </ul>
 
 <h2>❔ About</h2>
