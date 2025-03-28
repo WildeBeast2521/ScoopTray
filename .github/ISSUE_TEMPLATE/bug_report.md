@@ -26,7 +26,7 @@ If applicable, add screenshots to help explain your problem.
 **Desktop (please complete the following information):**
  - Windows: [e.g. 11]
  - Build: [e.g. 26100]
-(use `[System.Environment]::OSVersion.Version` in PowerShell to get the build numeber)
+(use `[System.Environment]::OSVersion.Version` in PowerShell to get the build number)
 
 **Additional context**
 Add any other context about the problem here.
