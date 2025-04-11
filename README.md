@@ -9,17 +9,17 @@
   <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge&logo=github">
 </p>
 
-<h2>Table of Contents</h2>
-<ul>
-  <li><a href="https://github.com/WildeBeast2521/ScoopTray?tab=readme-ov-file#-about">About</a></li>
-  <li><a href="https://github.com/WildeBeast2521/ScoopTray?tab=readme-ov-file#-features">Features</a></li>
-  <li><a href="https://github.com/WildeBeast2521/ScoopTray?tab=readme-ov-file#-prerequisites">Prerequisites</a></li>
-  <li><a href="https://github.com/WildeBeast2521/ScoopTray?tab=readme-ov-file#-installation">Installation</a></li>
-  <li><a href="https://github.com/WildeBeast2521/ScoopTray?tab=readme-ov-file#%EF%B8%8F-usage">Usage</a></li>
-  <li><a href="https://github.com/WildeBeast2521/ScoopTray?tab=readme-ov-file#-acknowledgements">Acknowledgements</a></li>
-  <li><a href="https://github.com/WildeBeast2521/ScoopTray?tab=readme-ov-file#-contributing">Contributing</a></li>
-  <li><a href="https://github.com/WildeBeast2521/ScoopTray?tab=readme-ov-file#-license">License</a></li>
-</ul>
+## Table of Contents
+<!-- vim-markdown-toc GFM -->
+* [About](#-about)
+* [Features](#-features)
+* [Prerequisites](#-prerequisites)
+* [Installation](#-installation)
+* [Usage](#%EF%B8%8F-usage)
+* [Acknowledgements](#-acknowledgements)
+* [Contributing](#-contributing)
+* [License](#-license)
+<!-- vim-markdown-toc GFM -->
 
 <h2>❔ About</h2>
 <p>
