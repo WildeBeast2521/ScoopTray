@@ -24,7 +24,7 @@
 <h2>❔ About</h2>
 <p>
   ScoopTray is a lightweight PowerShell tray application that helps you monitor and update <a href="https://scoop.sh">Scoop</a> packages effortlessly.<br>
-  It runs in the background, checks for updates, and notifies you when new versions are available.
+  It runs in the background, checks for updates, and notifies you when new versions are available (by changing tray icon).
 </p>
 <h2>🚀 Features</h2>
 <p>
