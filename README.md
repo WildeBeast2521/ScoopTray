@@ -252,7 +252,7 @@
 
 <h2>🛠️ Usage</h2>
 <p>
-  <h3>Setting Up the Timer Interval</h3>
+  <h3>Timer Interval</h3>
   The default check interval is set to <b>2 hours</b>. To customize it, modify the <code>$timerInterval</code> value in the script.
 
   <h3>Backdrops</h3>
