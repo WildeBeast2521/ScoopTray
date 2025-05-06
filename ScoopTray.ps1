@@ -267,7 +267,7 @@ function Show-Form {
 			$window.Background = [System.Windows.Media.Brushes]::White
 			$window.Resources["TextForegroundBrush"] = [System.Windows.Media.Brushes]::Black
 		}
-  	})
+	})
 
 	$listBox = $window.FindName("ListBoxItems")
 	$yesButton = $window.FindName("YesButton")
