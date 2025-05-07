@@ -374,7 +374,7 @@ function Get-RunningProcess {
 		$message = "Do you want to terminate the following processes that are running and match the update list:"
 		$title = "Termination"
 
-		$result = Show-Form -title $title -text $message -packages $($matchingProcesses.ProcessName)
+		$result = Show-Form -title $title -text $message -packages $matchingProcesses.ProcessName
 
 		if ($result) {
 			# Store the command lines of the matching processes
