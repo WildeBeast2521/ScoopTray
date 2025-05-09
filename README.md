@@ -217,8 +217,10 @@
 
 <p id="terminates">
   <strong>[1]</strong>
-  To allow package updates, applications currently in use must be closed. It is highly recommended to ensure programs are idle and that no unsaved progress exists before termination.<br>
-  If you prefer to close applications manually, do so before running updates.
+  <br>
+    To allow package updates, applications currently in use must be closed. It is highly recommended to ensure programs are idle and that no unsaved progress exists before termination.
+  <br>
+    If you prefer to close applications manually, do so before running updates.
 </p>
 
 <h2>📚 Prerequisites</h2>
