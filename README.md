@@ -254,11 +254,58 @@
 
 <h2>🛠️ Usage</h2>
 <p>
+  Timer interval and backdrops can be set in the <code>settings.json</code> file created on initial start.
   <h3>Timer Interval</h3>
-  The default check interval is set to <b>2 hours</b>. To customize it, modify the <code>$timerInterval</code> value in the script.
+  The default check interval is set to <b>2 hours</b>. To customize it, set the <code>interval</code> value in settings.
 
   <h3>Backdrop</h3>
-  The default backdrop is set to <b>Mica</b>. To customize it, replace <code>$DWMSBT_MAINWINDOW</code> with a defined variable (<code>$DWMSBT_MAINWINDOW</code>, <code>$DWMSBT_TRANSIENTWINDOW</code> or <code>$DWMSBT_TABBEDWINDOW</code>) at the appropriate line in the script.
+  The default backdrop is set to <b>Mica</b>. To customize it, set the <code>backdrop</code> value in the settings with the appropriate constant. <a href="https://learn.microsoft.com/en-us/windows/win32/api/dwmapi/ne-dwmapi-dwm_systembackdrop_type">Constants</a> for backdrops are defined below:
+  <table>
+    <tr>
+      <th align="center">
+        <b>Backdrop</b>
+      </th>
+      <th align="center">
+        <b>Constant</b>
+      </th>
+    </tr>
+    <tr>
+      <td align="center">
+        <a title="Mica">
+          Mica <b>(Default)</b>
+        </a>
+      </td>
+      <td align="center">
+        <a title="Mica_Constant">
+          <code>2</code>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <a title="Acrylic">
+          Acrylic
+        </a>
+      </td>
+      <td align="center">
+        <a title="Acrylic_Constant">
+          <code>3</code>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <a title="Mica Alt">
+          Mica Alt
+        </a>
+      </td>
+      <td align="center">
+        <a title="MicaAlt_Constant">
+          <code>4</code>
+        </a>
+      </td>
+    </tr>
+  </table>
 </p>
 
 <h2>🙌 Acknowledgements</h2>
