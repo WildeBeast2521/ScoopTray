@@ -67,9 +67,24 @@ $PREFERRED_APPMODE_ALLOWDARK = 1;
 $defaultIconPath = "$PSScriptRoot\up-to-date.ico"
 $updateIconPath = "$PSScriptRoot\updates-available.ico"
 $failedIconPath = "$PSScriptRoot\failed.ico"
+$json = "$PSScriptRoot\settings.json"
 
-# Timer interval between checks (milliseconds)
-$timerInterval = 2*60*60*1000 # 2 hours
+# Define settings
+if (-not (Test-Path $json)) {
+
+	# Define default settings as a hashtable
+	$defaultSettings = @{
+		interval = 2
+		backdrop = 2
+	}
+
+	$jsonContent = $defaultSettings | ConvertTo-Json
+	$jsonContent | Out-File -FilePath $json -Encoding UTF8
+}
+$settingsJson = Get-Content -Path $json | ConvertFrom-Json
+
+# Timer interval between checks (hours to milliseconds)
+$timerInterval = $settingsJson.interval*60*60*1000
 
 # Create and configure the NotifyIcon object
 $notifyIcon = New-Object System.Windows.Forms.NotifyIcon
@@ -218,10 +233,6 @@ function Show-Form {
 		$DWMWA_USE_IMMERSIVE_DARK_MODE = 20;
 		$DWMWA_SYSTEMBACKDROP_TYPE = 38;
 
-		$DWMSBT_MAINWINDOW = 2;       # Mica
-		$DWMSBT_TRANSIENTWINDOW = 3;  # Acrylic
-		$DWMSBT_TABBEDWINDOW = 4;     # Mica Alt
-
 		$windowsBuild = [System.Environment]::OSVersion.Version
 
 		$theme = Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "AppsUseLightTheme"
@@ -261,7 +272,7 @@ function Show-Form {
 			# Set backdrop
 			# Check compatibility
 			if ($windowsBuild.Build -ge 22621) {
-				[DwmApi]::SetDwmAttrib($hwnd, $DWMWA_SYSTEMBACKDROP_TYPE, $DWMSBT_MAINWINDOW)
+				[DwmApi]::SetDwmAttrib($hwnd, $DWMWA_SYSTEMBACKDROP_TYPE, $settingsJson.backdrop)
 			}
 		} else {
 			$window.Background = [System.Windows.Media.Brushes]::White
