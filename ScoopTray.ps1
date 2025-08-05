@@ -473,6 +473,7 @@ function Update-NotifyIcon {
 				$count = $Script:ScoopState["AvailableUpdates"].Count
 				$Script:updateList = $Script:ScoopState["AvailableUpdates"] -join ', '
 				Set-NotifyIconTooltip -fullText "$count update(s) available:`n$Script:updateList"
+				New-BurntToastNotification -Text "Updates Available", "$count update(s) available:`n$Script:updateList" -AppLogo $updateIconPath
 			} else {
 				$notifyIcon.Icon = [System.Drawing.Icon]::ExtractAssociatedIcon($defaultIconPath)
 				Set-NotifyIconTooltip -fullText 'All applications are up to date'
