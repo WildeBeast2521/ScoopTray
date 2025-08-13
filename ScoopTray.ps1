@@ -93,21 +93,11 @@ $notifyIcon.Icon = [System.Drawing.Icon]::ExtractAssociatedIcon($defaultIconPath
 
 # Initialize Script variables
 $Script:ScoopState = @{
-	"UpdatesAvailable" = $false
 	"FailedInstalls" = @()
 	"AvailableUpdates" = @()
+	"HeldPackages" = @()
 }
 $Script:updateList = ""
-
-# Execute a PowerShell command and return the output
-function Invoke-PowerShellCommand {
-	param (
-		[string]$command
-	)
-	# Redirect the output within the command string
-	$output = Invoke-Expression "$command *>&1 | Out-String"
-	return $output.Trim() # Remove the trailing newline character
-}
 
 # Show form
 function Show-Form {
@@ -309,38 +299,25 @@ function Show-Form {
 # Update the Scoop state
 function Update-ScoopState {
 	param (
-		[string]$output
+		[object]$output
 	)
 
 	# Reset the state
-	$Script:ScoopState["UpdatesAvailable"] = $false
 	$Script:ScoopState["FailedInstalls"] = @()
 	$Script:ScoopState["AvailableUpdates"] = @()
+	$Script:ScoopState["HeldPackages"] = @()
 
 	# Process the output for updates and failed installs
-	$text = $output -split "`n"
-	$lines = $text.Where({ $_ -like "---*" },'SkipUntil') | Select-Object -skip 1
-	$updateLines = $lines | Where-Object { $_.Trim() -ne "" }
-	$failedInstalls = $updateLines | Where-Object { $_ -match "Install failed" }
-	$availableUpdates = $updateLines | Where-Object { $_ -notmatch "Install failed" }
-
-	# Update state if failed installs are found
-	if ($failedInstalls.Count -gt 0) {
-		$Script:ScoopState["FailedInstalls"] = $failedInstalls | ForEach-Object { ($_ -split '\s+')[0] }
-	}
-
-	# Update state if updates are available
-	if ($availableUpdates.Count -gt 0) {
-		$Script:ScoopState["UpdatesAvailable"] = $true
-		$Script:ScoopState["AvailableUpdates"] = $availableUpdates | ForEach-Object { ($_ -split '\s+')[0] }
-	}
+	$Script:ScoopState["AvailableUpdates"] = $output | Where-Object { $_ -notmatch "Held package" -and $_ -notmatch "Install failed" } | Select-Object -ExpandProperty Name
+	$Script:ScoopState["HeldPackages"] = $output | Where-Object { $_ -match "Held package" } | Select-Object -ExpandProperty Name
+	$Script:ScoopState["FailedInstalls"] = $output | Where-Object { $_ -match "Install failed" } | Select-Object -ExpandProperty Name
 }
 
 # Clean up failed installs
 function Remove-FailedInstall {
 	if ($Script:ScoopState["FailedInstalls"].Count -gt 0) {
 		$failedPackages = $Script:ScoopState["FailedInstalls"] -join ' '
-		Invoke-PowerShellCommand -command "scoop cleanup $failedPackages"
+		scoop cleanup $failedPackages
 	}
 }
 
@@ -410,7 +387,7 @@ function Update-ScoopPackage {
 	$package | ForEach-Object {
 		Start-Process "cmd.exe" -ArgumentList "/c scoop update $_" -WindowStyle Minimized -Wait
 	}
-	Invoke-PowerShellCommand -command "scoop cleanup * -k"
+	scoop cleanup * -k
 }
 
 # Restart terminated processes
@@ -459,14 +436,11 @@ function Update-NotifyIcon {
 		Set-NotifyIconTooltip -fullText "Error: Check internet connection"
 		New-BurntToastNotification -Text Error, "Check internet connection" -AppLogo $defaultIconPath
 	} else {
-		Invoke-PowerShellCommand -command "scoop update"
-		$outputFromStatus = Invoke-PowerShellCommand -command "scoop status"
-		$outputFromList = Invoke-PowerShellCommand -command "scoop list"
+		scoop update
+		$outputFromStatus = scoop status
 
 		if ($outputFromStatus) {
 			Update-ScoopState -output $outputFromStatus
-			$heldPackages = $outputFromList -split "`n" | Where-Object { $_ -match "Held package" } | ForEach-Object { ($_ -split '\s+')[0] }
-			$Script:ScoopState["AvailableUpdates"] = $Script:ScoopState["AvailableUpdates"] | Where-Object { $heldPackages -notcontains $_ }
 
 			if ($Script:ScoopState["AvailableUpdates"].Count -gt 0) {
 				$notifyIcon.Icon = [System.Drawing.Icon]::ExtractAssociatedIcon($updateIconPath)
