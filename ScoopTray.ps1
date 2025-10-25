@@ -387,8 +387,7 @@ function Update-ScoopPackage {
 	$package | ForEach-Object {
 		Start-Process "cmd.exe" -ArgumentList "/c scoop update $_" -WindowStyle Minimized -Wait
 	}
-	scoop cleanup * # Remove older installed versions
-	scoop cleanup * -k # Remove older cache
+	scoop cleanup * -k # Remove older installed versions and cache
 }
 
 # Restart terminated processes
@@ -533,4 +532,5 @@ $timer.Start()
 Update-NotifyIcon
 [System.GC]::Collect()
 [void] [System.Windows.Forms.Application]::Run()
+
 
