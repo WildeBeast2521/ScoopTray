@@ -1,3 +1,6 @@
+> [!NOTE]
+> ScoopTray has been superseded by [UniTray](https://github.com/WildeBeast2521/UniTray). Use UniTray instead, which allows updating [Scoop](https://scoop.sh/), [Chocolatey](https://chocolatey.org/) and [WinGet](https://github.com/microsoft/winget-cli), all from one application.
+
 <p align="center">
   <img alt="ScoopTray" src="./updates-available.ico" width="64">
 <h1 align="center">ScoopTray</h1>
